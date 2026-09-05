@@ -9,8 +9,49 @@ Skills for AI.
 
 ## Organizations
 
+- [agile-principles-skill](skills/agile-principles-skill/)
 - [organizational-development-skill](skills/organizational-development-skill/)
+- [ways-of-working-skill](skills/ways-of-working-skill/)
 - [united-kingdom-government-digital-and-data-profession-capability-framework-skill](skills/united-kingdom-government-digital-and-data-profession-capability-framework-skill/)
+
+## Technology
+
+### AI
+
+- [claude-ai-skill](skills/claude-ai-skill/)
+- [gemini-ai-skill](skills/gemini-ai-skill/)
+- [gpt-ai-skill](skills/gpt-ai-skill/)
+- [mistral-ai-skill](skills/mistral-ai-skill/)
+- [gb1-ai-skill](skills/gb1-ai-skill/)
+- [glimmer-ai-skill](skills/glimmer-ai-skill/)
+- [ollama-ai-skill](skills/ollama-ai-skill/)
+
+### Software engineering
+
+- [software-engineering-guide-skill](skills/software-engineering-guide-skill/)
+- [software-engineering-metrics-skill](skills/software-engineering-metrics-skill/)
+
+### Agile
+
+- [architecture-decision-record-skill](skills/architecture-decision-record-skill/)
+- [decision-records-skill](skills/decision-records-skill/)
+
+### Cloud
+
+- [aws-cloud-skill](skills/aws-cloud-skill/)
+- [azure-cloud-skill](skills/azure-cloud-skill/)
+- [civo-cloud-skill](skills/civo-cloud-skill/)
+- [google-cloud-skill](skills/google-cloud-skill/)
+- [scaleway-cloud-skill](skills/scaleway-cloud-skill/)
+
+### Database
+
+- [mariadb-database-skill](skills/mariadb-database-skill/)
+- [mysql-database-skill](skills/mysql-database-skill/)
+- [mssql-database-skill](skills/mssql-database-skill/)
+- [oracle-database-skill](skills/oracle-database-skill/)
+- [postgresql-database-skill](skills/postgresql-database-skill/)
+- [sqlite-database-skill](skills/sqlite-database-skill/)
 
 ## Lily Design System
 
@@ -23,12 +64,21 @@ Skills for AI.
 - [lily-design-system-vue-skill](skills/lily-design-system-vue-skill/)
 - [lily-design-system-web-components-skill](skills/lily-design-system-web-components-skill/)
 
-## Software engineering
+### Web formats
 
-- [architecture-decision-record-skill](skills/architecture-decision-record-skill/)
-- [decision-records-skill](skills/decision-records-skill/)
-- [software-engineering-guide-skill](skills/software-engineering-guide-skill/)
-- [software-engineering-metrics-skill](skills/software-engineering-metrics-skill/)
+- [css](skills/css-skill/)
+- [html](skills/html-skill/)
+- [json](skills/json-skill/)
+- [markdown](skills/markdown-skill/)
+- [sql](skills/sql-skill/)
+- [xml](skills/xml-skill/)
+
+### Programming languages
+
+- [javascript-programming-skill](skills/javascript-programming-skill/)
+- [python-programming-skill](skills/python-programming-skill/)
+- [rust-programming-skill](skills/rust-programming-skill/)
+- [typescript-programming-skill](skills/typescript-programming-skill/)
 
 ### Playwright testing
 
@@ -46,4 +96,10 @@ Skills for AI.
 
 ### Editors
 
+- [emacs-skill](skills/emacs-skill/)
+- [vim-skill](skills/vim-skill/)
 - [vix-skill](skills/vix-skill/)
+
+### Org mode
+
+- [org-mode-skill](skills/org-mode-skill/)
