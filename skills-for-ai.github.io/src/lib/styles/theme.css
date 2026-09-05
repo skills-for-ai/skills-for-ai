@@ -1,0 +1,65 @@
+/*
+ * Minimal structural CSS layered on top of a Lily theme stylesheet
+ * (see static/themes/*.css, swapped in by ThemePicker.svelte). Lily's
+ * headless components carry no CSS of their own — this file supplies only
+ * page-level layout and the handful of local class hooks this site's own
+ * markup uses; component-level visuals come entirely from the active theme.
+ */
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-family:
+		system-ui,
+		-apple-system,
+		'Segoe UI',
+		Roboto,
+		sans-serif;
+	line-height: 1.5;
+}
+
+a {
+	color: var(--color-link, #0b5fff);
+}
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+
+.card {
+	border: 1px solid var(--color-border, #d0d5dd);
+	border-radius: 0.5rem;
+	padding: 1.25rem;
+	height: 100%;
+}
+
+.card h3 {
+	margin-top: 0;
+}
+
+.card a {
+	text-decoration: none;
+}
+
+.card a:hover {
+	text-decoration: underline;
+}
+
+.badge {
+	display: inline-block;
+	padding: 0.15rem 0.6rem;
+	border-radius: 999px;
+	font-size: 0.75rem;
+	background: var(--color-surface-muted, #eef1f5);
+}

@@ -1,0 +1,43 @@
+#!/bin/sh
+# Push every subproject subtree to its standalone public repository.
+#
+# Each subproject directory is a git subtree whose remote (configured in
+# .git/config) carries the same name as the directory and fans out to
+# GitHub, GitLab, and Codeberg push URLs. The per-subproject
+# .git-subtree-push file names the remote; a subproject without one is
+# skipped.
+#
+# Usage:
+#   bin/git-subtree-push            # push all subtrees
+#   bin/git-subtree-push <name>...  # push only the named subproject(s)
+#
+# Note: keep `git subtree push` output UNPIPED. `git subtree split`
+# walks the whole history and dies on SIGPIPE if the consumer exits
+# early.
+set -eu
+
+top="$(cd "$(dirname "$0")/.." && pwd)"
+cd "$top"
+
+if [ "$#" -gt 0 ]; then
+    names="$*"
+else
+    names="$(git remote | grep -v '^origin$')"
+fi
+
+fail=0
+for name in $names; do
+    conf="$top/$name/.git-subtree-push"
+    if [ ! -f "$conf" ]; then
+        echo "skip: $name (no .git-subtree-push)" >&2
+        continue
+    fi
+    remote="$(cat "$conf")"
+    [ -n "$remote" ] || remote="$name"
+    echo "== $name -> $remote"
+    if ! git subtree push --prefix="$name" "$remote" main; then
+        echo "FAILED: $name" >&2
+        fail=1
+    fi
+done
+exit "$fail"

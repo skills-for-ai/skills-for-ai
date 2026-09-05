@@ -1,0 +1,10 @@
+#!/bin/sh
+# Push the docs site subdirectory out to the github-pages remote via
+# git's subtree mechanism. Invoked by `make github-pages`.
+# See spec/monorepo-github-pages/index.md.
+set -eu
+
+top="$(cd "$(dirname "$0")/.." && pwd)"
+cd "$top"
+
+git subtree push --prefix=skills-for-ai.github.io github-pages main
