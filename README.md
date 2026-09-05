@@ -2,17 +2,49 @@
 
 Skills for AI.
 
+Browse the catalog at <https://skills-for-ai.github.io/> (site source:
+[`skills-for-ai.github.io/`](skills-for-ai.github.io/)).
+
 ## Health economics
 
 - [health-economics-guide-skill](skills/health-economics-guide-skill/)
 - [health-economics-metrics-skill](skills/health-economics-metrics-skill/)
 
+## Health & safety
+
+- [health-care-skill](skills/health-care-skill/)
+- [urgent-emergency-care-skill](skills/urgent-emergency-care-skill/)
+- [first-aid-skill](skills/first-aid-skill/)
+
 ## Organizations
 
 - [agile-principles-skill](skills/agile-principles-skill/)
 - [organizational-development-skill](skills/organizational-development-skill/)
+- [people-and-organizational-development-skill](skills/people-and-organizational-development-skill/)
+- [continuing-professional-development-skill](skills/continuing-professional-development-skill/)
 - [ways-of-working-skill](skills/ways-of-working-skill/)
 - [united-kingdom-government-digital-and-data-profession-capability-framework-skill](skills/united-kingdom-government-digital-and-data-profession-capability-framework-skill/)
+
+## Management disciplines
+
+- [project-management-skill](skills/project-management-skill/)
+- [program-management-skill](skills/program-management-skill/)
+- [portfolio-management-skill](skills/portfolio-management-skill/)
+- [practice-management-skill](skills/practice-management-skill/)
+- [product-management-skill](skills/product-management-skill/)
+- [critical-path-skill](skills/critical-path-skill/)
+- [critical-chain-skill](skills/critical-chain-skill/)
+
+## Business functions
+
+- [public-relations-manager-skill](skills/public-relations-manager-skill/)
+- [marketing-manager-skill](skills/marketing-manager-skill/)
+- [sales-manager-skill](skills/sales-manager-skill/)
+- [legal-manager-skill](skills/legal-manager-skill/)
+- [finance-manager-skill](skills/finance-manager-skill/)
+- [communications-manager-skill](skills/communications-manager-skill/)
+- [operations-manager-skill](skills/operations-manager-skill/)
+- [information-manager-skill](skills/information-manager-skill/)
 
 ## Technology
 
@@ -52,6 +84,23 @@ Skills for AI.
 - [oracle-database-skill](skills/oracle-database-skill/)
 - [postgresql-database-skill](skills/postgresql-database-skill/)
 - [sqlite-database-skill](skills/sqlite-database-skill/)
+
+### Version control
+
+- [git-skill](skills/git-skill/)
+- [github-skill](skills/github-skill/)
+- [gitlab-skill](skills/gitlab-skill/)
+- [codeberg-skill](skills/codeberg-skill/)
+
+### Design & UX
+
+- [figma-skill](skills/figma-skill/)
+- [figma-make-skill](skills/figma-make-skill/)
+- [user-centred-design-skill](skills/user-centred-design-skill/)
+
+### Internationalization
+
+- [locale-skill](skills/locale-skill/)
 
 ## Lily Design System
 
