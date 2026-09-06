@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { ContainerWithFixedWidth, Badge } from 'lily-design-system-svelte-headless';
 	import Seo from '$lib/components/site/Seo.svelte';
-	import { skills, totalSkillCount } from '$lib/data/skills';
+	import { skills } from '$lib/data/skills';
 	import { categories } from '$lib/data/categories';
 	import { REPO_URL, SITE_DESCRIPTION } from '$lib/site';
 
@@ -36,10 +36,10 @@
 		<section class="hero">
 			<h1>Skills on AI</h1>
 			<p class="lede">
-				A catalog of {totalSkillCount} Claude Code skills — reference material an AI coding
-				agent loads on demand for testing frameworks, cloud platforms, databases, design
-				systems, programming languages, and more. Each skill is a single <code>SKILL.md</code
-				> file with trigger conditions and grounded content.
+				A catalog of AI coding skills — reference material an AI agent loads on demand for
+				testing frameworks, cloud platforms, databases, design systems, programming languages,
+				and more. Each skill is a single <code>SKILL.md</code> file with trigger conditions and
+				grounded content.
 			</p>
 			<p class="hero-links">
 				<a href={REPO_URL}>Source on GitHub</a> ·
@@ -81,11 +81,19 @@
 
 <style>
 	.hero {
-		padding-block: 2.5rem 1.5rem;
+		padding-block: 3.5rem 2rem;
+		background: none;
+		text-align: center;
+	}
+	.hero h1 {
+		font-size: 3.25rem;
+		line-height: 1.1;
+		margin-block: 0 1rem;
 	}
 	.lede {
 		max-width: 60ch;
-		font-size: 1.05rem;
+		font-size: 1.15rem;
+		margin-inline: auto;
 	}
 	.hero-links {
 		font-size: 0.95rem;
