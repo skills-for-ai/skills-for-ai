@@ -53,6 +53,8 @@ Skills:
 - {giving,getting}-feedback
 - {joint-venture,spinoff,spinout,business-development}
 - strategic-{network,platform,flywheel,viral,moat,threshold,scale,leverage,monopoly}-effects
+- {business-model-canvas,venture-capital,angel-investor,business-model-innovation,market-expansion,product-line-extension}
+- {feasibility,stakeholder,demand,five-forces}-analysis
 - {text-to-speech,speech-to-text,low-code,no-code}
 - cancer-care
 - diabetes-care

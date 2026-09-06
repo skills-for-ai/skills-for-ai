@@ -95,3 +95,4 @@ findings.
 
 - [Wikipedia: PEST analysis](https://en.wikipedia.org/wiki/PEST_analysis) — the source for this skill.
 - [[swot-analysis]] for the complementary internal-vs-external strategic framework PESTLE findings often feed into.
+- [[five-forces-analysis]] for a complementary industry-structure framework, as distinct from PESTLE's macro-environment focus.

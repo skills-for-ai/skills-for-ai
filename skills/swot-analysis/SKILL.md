@@ -89,3 +89,4 @@ that.
 
 - [Wikipedia: SWOT analysis](https://en.wikipedia.org/wiki/SWOT_analysis) — the source for this skill.
 - [[pestle-analysis]] for the complementary external-macro-environment framework that commonly feeds SWOT's Opportunities/Threats quadrants.
+- [[five-forces-analysis]] for a complementary industry-structure framework, as distinct from SWOT's organization-level focus.

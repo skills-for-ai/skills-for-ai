@@ -259,8 +259,6 @@ Browse the catalog at <https://skills-on-ai.org/> (site source:
 - [total-project-control](skills/total-project-control/)
 - [plan-do-check-act](skills/plan-do-check-act/)
 - [ooda-loop](skills/ooda-loop/)
-- [pestle-analysis](skills/pestle-analysis/)
-- [swot-analysis](skills/swot-analysis/)
 - [strategic-balanced-scorecard](skills/strategic-balanced-scorecard/)
 - [objectives-and-key-results](skills/objectives-and-key-results/)
 - [key-performance-indicators](skills/key-performance-indicators/)
@@ -342,6 +340,21 @@ Browse the catalog at <https://skills-on-ai.org/> (site source:
 - [spinoff](skills/spinoff/)
 - [spinout](skills/spinout/)
 - [business-development](skills/business-development/)
+- [business-model-canvas](skills/business-model-canvas/)
+- [venture-capital](skills/venture-capital/)
+- [angel-investor](skills/angel-investor/)
+- [business-model-innovation](skills/business-model-innovation/)
+- [market-expansion](skills/market-expansion/)
+- [product-line-extension](skills/product-line-extension/)
+
+## Business analysis
+
+- [feasibility-analysis](skills/feasibility-analysis/)
+- [stakeholder-analysis](skills/stakeholder-analysis/)
+- [demand-analysis](skills/demand-analysis/)
+- [swot-analysis](skills/swot-analysis/)
+- [five-forces-analysis](skills/five-forces-analysis/)
+- [pestle-analysis](skills/pestle-analysis/)
 
 ## Strategic effects
 
