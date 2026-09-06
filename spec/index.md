@@ -50,6 +50,7 @@ Skills:
 - keyboard-shortcut
 - web-content-accessibility-guidelines
 - {typography,copywriting,microcopy,iconography,mobile-first-design}
+- {text-to-speech,speech-to-text,low-code,no-code}
 - {mariadb,mysql,mssql,oracle,postgresql,sqlite}-database
 - {playwright,selenium}-testing-with-{javascript,python,rust,typescript}
 - {health-care,urgent-emergency-care,first-aid}

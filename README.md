@@ -218,6 +218,10 @@ Browse the catalog at <https://skills-on-ai.github.io/> (site source:
 - [evolutionary-architecture](skills/evolutionary-architecture/)
 - [evolutionary-engineering](skills/evolutionary-engineering/)
 - [model-view-controller](skills/model-view-controller/)
+- [text-to-speech](skills/text-to-speech/)
+- [speech-to-text](skills/speech-to-text/)
+- [low-code](skills/low-code/)
+- [no-code](skills/no-code/)
 
 ### Decision records
 
