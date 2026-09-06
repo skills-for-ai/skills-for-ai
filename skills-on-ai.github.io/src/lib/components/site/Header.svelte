@@ -3,7 +3,6 @@
 	import ThemePicker from './ThemePicker.svelte';
 	import TextSizePicker from './TextSizePicker.svelte';
 	import SharePicker from './SharePicker.svelte';
-	import { totalSkillCount } from '$lib/data/skills';
 </script>
 
 <Header label="Site header">
@@ -11,7 +10,6 @@
 		<div class="site-header-bar">
 			<a class="brand" href="/">
 				<strong>Skills on AI</strong>
-				<span class="brand-count">{totalSkillCount} skills</span>
 			</a>
 			<div class="site-header-controls">
 				<TextSizePicker />
@@ -41,10 +39,6 @@
 		gap: 0.5rem;
 		text-decoration: none;
 		color: inherit;
-	}
-	.brand-count {
-		font-size: 0.85rem;
-		opacity: 0.7;
 	}
 	.site-header-controls {
 		display: flex;
