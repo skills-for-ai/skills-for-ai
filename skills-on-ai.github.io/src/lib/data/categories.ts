@@ -19,6 +19,8 @@ export const categories: Category[] = [
 	{ slug: "change-management-agile", title: "Change management › Agile" },
 	{ slug: "meetings", title: "Meetings" },
 	{ slug: "strategy-planning-frameworks", title: "Strategy & planning frameworks" },
+	{ slug: "research-analysis-methods", title: "Research & analysis methods" },
+	{ slug: "accessibility-inclusion", title: "Accessibility & inclusion" },
 	{ slug: "statistics", title: "Statistics" },
 	{ slug: "communication-thinking", title: "Communication & thinking" },
 	{ slug: "creative-thinking", title: "Creative thinking" },

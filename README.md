@@ -113,6 +113,24 @@ Browse the catalog at <https://skills-on-ai.github.io/> (site source:
 - [emergent-task-planning](skills/emergent-task-planning/)
 - [volatile-uncertain-complex-ambiguous](skills/volatile-uncertain-complex-ambiguous/)
 
+## Research & analysis methods
+
+- [task-analysis](skills/task-analysis/)
+- [cognitive-task-analysis](skills/cognitive-task-analysis/)
+- [hierarchical-task-analysis](skills/hierarchical-task-analysis/)
+- [workflow-analysis](skills/workflow-analysis/)
+- [critical-incident-technique](skills/critical-incident-technique/)
+- [diary-study](skills/diary-study/)
+
+## Accessibility & inclusion
+
+- [digital-inclusion](skills/digital-inclusion/)
+- [web-content-accessibility-guidelines](skills/web-content-accessibility-guidelines/)
+- [aria-attributes](skills/aria-attributes/)
+- [screen-reader](skills/screen-reader/)
+- [keyboard-shortcut](skills/keyboard-shortcut/)
+- [cross-cultural-communication](skills/cross-cultural-communication/)
+
 ## Statistics
 
 - [statistical-analysis](skills/statistical-analysis/)
@@ -199,6 +217,7 @@ Browse the catalog at <https://skills-on-ai.github.io/> (site source:
 - [back-end-design](skills/back-end-design/)
 - [evolutionary-architecture](skills/evolutionary-architecture/)
 - [evolutionary-engineering](skills/evolutionary-engineering/)
+- [model-view-controller](skills/model-view-controller/)
 
 ### Decision records
 
@@ -234,6 +253,13 @@ Browse the catalog at <https://skills-on-ai.github.io/> (site source:
 - [figma](skills/figma/)
 - [figma-make](skills/figma-make/)
 - [user-centred-design](skills/user-centred-design/)
+- [site-map](skills/site-map/)
+- [typography](skills/typography/)
+- [copywriting](skills/copywriting/)
+- [microcopy](skills/microcopy/)
+- [iconography](skills/iconography/)
+- [mobile-first-design](skills/mobile-first-design/)
+- [anticipatory-design](skills/anticipatory-design/)
 
 ### Internationalization
 
