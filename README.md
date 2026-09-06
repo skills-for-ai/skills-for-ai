@@ -507,6 +507,8 @@ Browse the catalog at <https://skills-on-ai.org/> (site source:
 - [lily-design-system-vue](skills/lily-design-system-vue/)
 - [lily-design-system-web-components](skills/lily-design-system-web-components/)
 
+## Software Engineering
+
 ### Web formats
 
 - [css](skills/css/)
@@ -518,7 +520,7 @@ Browse the catalog at <https://skills-on-ai.org/> (site source:
 - [xml](skills/xml/)
 - [yaml](skills/yaml/)
 
-### Programming languages
+### Programming Languages
 
 - [javascript-programming](skills/javascript-programming/)
 - [python-programming](skills/python-programming/)
