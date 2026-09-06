@@ -1,0 +1,10 @@
+// Site-wide constants used by the Seo component and sitemap route.
+// SITE_URL is the GitHub Pages URL — used to build absolute URLs for
+// canonical links, Open Graph tags, and the sitemap, which all require
+// full URLs rather than relative paths.
+export const SITE_URL = 'https://skills-for-ai.github.io';
+export const SITE_NAME = 'Skills for AI';
+export const SITE_DESCRIPTION =
+	'A catalog of Claude Code skills — reference material an AI coding agent loads on demand for testing frameworks, cloud platforms, databases, design systems, programming languages, and more.';
+export const DEFAULT_OG_IMAGE = `${SITE_URL}/favicon.svg`;
+export const REPO_URL = 'https://github.com/skills-for-ai/skills-for-ai';

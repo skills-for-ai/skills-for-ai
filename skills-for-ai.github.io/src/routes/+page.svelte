@@ -1,36 +1,33 @@
 <script lang="ts">
 	import { ContainerWithFixedWidth, Card, Grid, Badge } from 'lily-design-system-svelte-headless';
-	import { skillCategories, totalSkillCount, REPO_URL } from '$lib/data/skills';
+	import Seo from '$lib/components/site/Seo.svelte';
+	import { skills, totalSkillCount } from '$lib/data/skills';
+	import { categories } from '$lib/data/categories';
+	import { REPO_URL, SITE_DESCRIPTION } from '$lib/site';
 
 	let query = $state('');
 
+	const skillsByCategory = new Map(
+		categories.map((cat) => [cat.slug, skills.filter((s) => s.category === cat.title)])
+	);
+
 	const filtered = $derived(
 		query.trim() === ''
-			? skillCategories
-			: skillCategories
+			? categories.map((cat) => ({ ...cat, skills: skillsByCategory.get(cat.slug) ?? [] }))
+			: categories
 					.map((cat) => ({
 						...cat,
-						skills: cat.skills.filter(
+						skills: (skillsByCategory.get(cat.slug) ?? []).filter(
 							(s) =>
-								s.slug.toLowerCase().includes(query.toLowerCase()) ||
+								s.title.toLowerCase().includes(query.toLowerCase()) ||
 								s.description.toLowerCase().includes(query.toLowerCase())
 						)
 					}))
 					.filter((cat) => cat.skills.length > 0)
 	);
-
-	function titleFromSlug(slug: string): string {
-		return slug
-			.replace(/-skill$/, '')
-			.split('-')
-			.map((w) => w.charAt(0).toUpperCase() + w.slice(1))
-			.join(' ');
-	}
 </script>
 
-<svelte:head>
-	<title>Skills for AI</title>
-</svelte:head>
+<Seo title="Skills for AI" description={SITE_DESCRIPTION} path="/" />
 
 <main id="content">
 	<ContainerWithFixedWidth maxWidth="72rem">
@@ -44,7 +41,8 @@
 			</p>
 			<p class="hero-links">
 				<a href={REPO_URL}>Source on GitHub</a> ·
-				<a href="{REPO_URL}#readme">README</a>
+				<a href="{REPO_URL}#readme">README</a> ·
+				<a href="/categories/">Browse by category</a>
 			</p>
 		</section>
 
@@ -56,18 +54,16 @@
 			bind:value={query}
 		/>
 
-		{#each filtered as category (category.title)}
+		{#each filtered as category (category.slug)}
 			<section class="category">
-				<h2>{category.title} <Badge label="{category.skills.length} skills">{category.skills.length}</Badge></h2>
+				<h2>
+					<a href="/categories/{category.slug}/">{category.title}</a>
+					<Badge label="{category.skills.length} skills">{category.skills.length}</Badge>
+				</h2>
 				<Grid columns="repeat(auto-fill, minmax(260px, 1fr))" gap="1rem">
 					{#each category.skills as skill (skill.slug)}
-						<Card
-							heading={titleFromSlug(skill.slug)}
-							href="{REPO_URL}/tree/main/skills/{skill.slug}"
-							label={titleFromSlug(skill.slug)}
-						>
+						<Card heading={skill.title} href="/skills/{skill.slug}/" label={skill.title}>
 							<p class="skill-description">{skill.description}</p>
-							<p class="skill-path"><code>skills/{skill.slug}/</code></p>
 						</Card>
 					{/each}
 				</Grid>
@@ -113,12 +109,11 @@
 		align-items: center;
 		gap: 0.6rem;
 	}
+	.category h2 a {
+		color: inherit;
+	}
 	.skill-description {
 		font-size: 0.9rem;
 		line-height: 1.45;
-	}
-	.skill-path {
-		font-size: 0.8rem;
-		opacity: 0.7;
 	}
 </style>
