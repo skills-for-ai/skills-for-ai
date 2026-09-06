@@ -39,6 +39,7 @@ export const categories: Category[] = [
 	{ slug: "lily-design-system", title: "Lily Design System" },
 	{ slug: "lily-design-system-web-formats", title: "Lily Design System › Web formats" },
 	{ slug: "lily-design-system-programming-languages", title: "Lily Design System › Programming languages" },
+	{ slug: "lily-design-system-web-frameworks", title: "Lily Design System › Web frameworks" },
 	{ slug: "lily-design-system-playwright-testing", title: "Lily Design System › Playwright testing" },
 	{ slug: "lily-design-system-selenium-testing", title: "Lily Design System › Selenium testing" },
 	{ slug: "lily-design-system-editors", title: "Lily Design System › Editors" },

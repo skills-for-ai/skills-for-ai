@@ -299,6 +299,30 @@ Browse the catalog at <https://skills-on-ai.github.io/> (site source:
 - [python-programming](skills/python-programming/)
 - [rust-programming](skills/rust-programming/)
 - [typescript-programming](skills/typescript-programming/)
+- [c-sharp-programming](skills/c-sharp-programming/)
+- [dot-net-programming](skills/dot-net-programming/)
+- [delphi-programming](skills/delphi-programming/)
+- [r-programming](skills/r-programming/)
+- [julia-programming](skills/julia-programming/)
+- [go-programming](skills/go-programming/)
+- [pascal-programming](skills/pascal-programming/)
+- [lisp-programming](skills/lisp-programming/)
+- [scheme-programming](skills/scheme-programming/)
+- [zig-programming](skills/zig-programming/)
+- [c-plus-plus-programming](skills/c-plus-plus-programming/)
+- [c-programming](skills/c-programming/)
+- [objective-c-programming](skills/objective-c-programming/)
+- [swift-programming](skills/swift-programming/)
+- [kotlin-programming](skills/kotlin-programming/)
+
+### Web frameworks
+
+- [svelte-programming](skills/svelte-programming/)
+- [angular-programming](skills/angular-programming/)
+- [react-programming](skills/react-programming/)
+- [vue-programming](skills/vue-programming/)
+- [blazor-programming](skills/blazor-programming/)
+- [nunjucks-programming](skills/nunjucks-programming/)
 
 ### Playwright testing
 

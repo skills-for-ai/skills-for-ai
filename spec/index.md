@@ -32,6 +32,9 @@ Skills:
 - {aws,azure,civo,google,scaleway}-cloud
 - {claude,gemini,gpt,mistral,gb1,glimmer,ollama}-ai
 - {javascript,python,rust,typescript}-programming
+- {c-sharp,dot-net,delphi,r,julia,go,pascal,lisp,scheme,zig}-programming
+- {c-plus-plus,c,objective-c,swift,kotlin}-programming
+- {svelte,angular,react,vue,blazor,nunjucks}-programming
 - {mariadb,mysql,mssql,oracle,postgresql,sqlite}-database
 - {playwright,selenium}-testing-with-{javascript,python,rust,typescript}
 - {health-care,urgent-emergency-care,first-aid}

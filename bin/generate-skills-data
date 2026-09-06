@@ -32,8 +32,19 @@ ACRONYMS = {
     "javascript": "JavaScript", "typescript": "TypeScript",
 }
 
+# Whole-slug title overrides for names that don't title-case cleanly
+# word-by-word (symbols, unconventional capitalization).
+SLUG_TITLES = {
+    "c-sharp-programming": "C# Programming",
+    "c-plus-plus-programming": "C++ Programming",
+    "objective-c-programming": "Objective-C Programming",
+    "dot-net-programming": ".NET Programming",
+}
+
 
 def slug_to_title(slug: str) -> str:
+    if slug in SLUG_TITLES:
+        return SLUG_TITLES[slug]
     words = slug.split("-")
     small = {"a", "an", "of", "the", "and", "or", "to", "in", "on", "vs"}
     out = []
