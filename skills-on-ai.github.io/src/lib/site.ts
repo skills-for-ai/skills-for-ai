@@ -6,6 +6,6 @@
 export const SITE_URL = 'https://skills-on-ai.org';
 export const SITE_NAME = 'Skills on AI';
 export const SITE_DESCRIPTION =
-	'A catalog of Claude Code skills — reference material an AI coding agent loads on demand for testing frameworks, cloud platforms, databases, design systems, programming languages, and more.';
+	'A catalog of AI coding skills — reference material an AI agent loads on demand for testing frameworks, cloud platforms, databases, design systems, programming languages, and more.';
 export const DEFAULT_OG_IMAGE = `${SITE_URL}/favicon.svg`;
 export const REPO_URL = 'https://github.com/skills-on-ai/skills-on-ai';
