@@ -338,6 +338,22 @@ Browse the catalog at <https://skills-on-ai.org/> (site source:
 - [operations-manager](skills/operations-manager/)
 - [information-manager](skills/information-manager/)
 - [branding](skills/branding/)
+- [joint-venture](skills/joint-venture/)
+- [spinoff](skills/spinoff/)
+- [spinout](skills/spinout/)
+- [business-development](skills/business-development/)
+
+## Strategic effects
+
+- [strategic-network-effects](skills/strategic-network-effects/)
+- [strategic-platform-effects](skills/strategic-platform-effects/)
+- [strategic-flywheel-effects](skills/strategic-flywheel-effects/)
+- [strategic-viral-effects](skills/strategic-viral-effects/)
+- [strategic-moat-effects](skills/strategic-moat-effects/)
+- [strategic-threshold-effects](skills/strategic-threshold-effects/)
+- [strategic-scale-effects](skills/strategic-scale-effects/)
+- [strategic-leverage-effects](skills/strategic-leverage-effects/)
+- [strategic-monopoly-effects](skills/strategic-monopoly-effects/)
 
 ## Productivity tools
 

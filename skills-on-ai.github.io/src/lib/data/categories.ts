@@ -27,6 +27,7 @@ export const categories: Category[] = [
 	{ slug: "communication-thinking", title: "Communication & thinking" },
 	{ slug: "creative-thinking", title: "Creative thinking" },
 	{ slug: "business-functions", title: "Business functions" },
+	{ slug: "strategic-effects", title: "Strategic effects" },
 	{ slug: "productivity-tools-microsoft-office", title: "Productivity tools › Microsoft Office" },
 	{ slug: "productivity-tools-google-workspace", title: "Productivity tools › Google Workspace" },
 	{ slug: "technology-ai", title: "Technology › AI" },

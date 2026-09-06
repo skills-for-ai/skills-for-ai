@@ -51,6 +51,8 @@ Skills:
 - web-content-accessibility-guidelines
 - {typography,copywriting,microcopy,iconography,mobile-first-design}
 - {giving,getting}-feedback
+- {joint-venture,spinoff,spinout,business-development}
+- strategic-{network,platform,flywheel,viral,moat,threshold,scale,leverage,monopoly}-effects
 - {text-to-speech,speech-to-text,low-code,no-code}
 - cancer-care
 - diabetes-care
