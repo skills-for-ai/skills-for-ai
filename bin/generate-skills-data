@@ -39,6 +39,8 @@ SLUG_TITLES = {
     "c-plus-plus-programming": "C++ Programming",
     "objective-c-programming": "Objective-C Programming",
     "dot-net-programming": ".NET Programming",
+    "team-focus": "TEAM FOCUS",
+    "smart-criteria": "SMART Criteria",
 }
 
 
