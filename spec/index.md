@@ -50,6 +50,7 @@ Skills:
 - keyboard-shortcut
 - web-content-accessibility-guidelines
 - {typography,copywriting,microcopy,iconography,mobile-first-design}
+- {giving,getting}-feedback
 - {text-to-speech,speech-to-text,low-code,no-code}
 - cancer-care
 - diabetes-care

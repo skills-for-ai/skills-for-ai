@@ -310,6 +310,8 @@ Browse the catalog at <https://skills-on-ai.org/> (site source:
 - [crucial-conversations](skills/crucial-conversations/)
 - [inclusive-language](skills/inclusive-language/)
 - [always-improving](skills/always-improving/)
+- [giving-feedback](skills/giving-feedback/)
+- [getting-feedback](skills/getting-feedback/)
 
 ## Creative thinking
 
