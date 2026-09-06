@@ -30,6 +30,7 @@ ACRONYMS = {
     "raci": "RACI", "plantuml": "PlantUML", "ux": "UX", "ui": "UI",
     "gpt": "GPT", "gb1": "GB1", "prince2": "PRINCE2",
     "javascript": "JavaScript", "typescript": "TypeScript",
+    "aria": "ARIA",
 }
 
 # Whole-slug title overrides for names that don't title-case cleanly
