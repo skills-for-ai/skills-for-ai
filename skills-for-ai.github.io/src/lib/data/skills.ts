@@ -42,6 +42,10 @@ export const skillCategories: SkillCategory[] = [
 				slug: 'first-aid-skill',
 				description: `Use when asked for general first-aid knowledge — the primary survey (DRABC/DRSABC), treating bleeding, burns, choking, or shock, or recovery position technique. This is general educational information, not medical advice for a specific person's condition — always direct a real emergency to local emergency services and in-person trained care.`
 			},
+			{
+				slug: 'care-plan-skill',
+				description: `Use when asked to organize a care plan for an aging or ill family member — a checklist covering legal, medical, financial, and long-term care areas — grounded in joelparkerhenderson/care-plan. This is general organizational guidance, not medical, legal, or financial advice for a specific person's situation.`
+			},
 		]
 	},
 	{
@@ -103,6 +107,80 @@ export const skillCategories: SkillCategory[] = [
 			{
 				slug: 'critical-chain-skill',
 				description: `Use when asked to explain or apply Critical Chain Project Management (CCPM) — resource-constrained scheduling, project/feeding buffers, or why CCPM removes individual task-level safety margins — as distinct from the Critical Path Method (see critical-path-skill).`
+			},
+			{
+				slug: 'statement-of-work-skill',
+				description: `Use when asked to write or structure a Statement of Work (SOW) — abstract/scope/payment sections, objectives via OKRs, performance via KPIs, or a RACI-style responsibility matrix — grounded in joelparkerhenderson/statement-of-work, as distinct from a full contract's legal terms.`
+			},
+		]
+	},
+	{
+		title: `Strategy & planning frameworks`,
+		skills: [
+			{
+				slug: 'total-project-control-skill',
+				description: `Use when asked to explain or apply Total Project Control (TPC) — Stephen Devaux's ROI-focused project-management method, critical path drag, DIPP, and Value Breakdown Structure — sourced from Wikipedia's Total project control article, as distinct from the plain Critical Path Method (see critical-path-skill).`
+			},
+			{
+				slug: 'plan-do-check-act-skill',
+				description: `Use when asked to explain or apply the PDCA (Plan-Do-Check-Act) improvement cycle, its PDSA (Plan-Do-Study-Act) variant, or how it compares to other iterative-improvement cycles (OODA, DMAIC) — sourced from Wikipedia's PDCA article.`
+			},
+			{
+				slug: 'ooda-loop-skill',
+				description: `Use when asked to explain or apply the OODA loop (Observe, Orient, Decide, Act) — John Boyd's decision-cycle theory — for business strategy or competitive situations, or to compare it against PDCA/DMAIC — grounded in joelparkerhenderson/ooda-loop.`
+			},
+			{
+				slug: 'pestle-analysis-skill',
+				description: `Use when asked to run or explain a PESTLE (or PEST) analysis — the macro-environmental factors framework for strategic planning — sourced from Wikipedia's PEST analysis article, including its PESTEL/STEEPLE variants and known limitations.`
+			},
+			{
+				slug: 'swot-analysis-skill',
+				description: `Use when asked to run or explain a SWOT analysis — Strengths, Weaknesses, Opportunities, Threats — the internal-vs-external strategic planning framework, sourced from Wikipedia's SWOT analysis article, including its history and known limitations.`
+			},
+			{
+				slug: 'strategic-balanced-scorecard-skill',
+				description: `Use when asked to build a strategic balanced scorecard — a destination statement across financial/external/internal/learning perspectives, connected to OKRs, KPIs, and CSFs — grounded in joelparkerhenderson/strategic-balanced-scorecard, as distinct from the plain OKR or KPI frameworks it connects.`
+			},
+			{
+				slug: 'objectives-and-key-results-skill',
+				description: `Use when asked to write OKRs (Objectives and Key Results) — an inspirational, team-actionable objective paired with measurable key results — grounded in joelparkerhenderson/objectives-and-key-results, including known real-world pros/cons, as distinct from KPIs alone (see key-performance-indicators-skill).`
+			},
+			{
+				slug: 'key-performance-indicators-skill',
+				description: `Use when asked to define, choose, or improve a Key Performance Indicator (KPI) — leading vs lagging indicators, measure vs metric, or how to check whether a proposed KPI is actually good — grounded in joelparkerhenderson/key-performance-indicator, as distinct from OKRs (see objectives-and-key-results-skill).`
+			},
+			{
+				slug: 'smart-criteria-skill',
+				description: `Use when asked to write or check a goal/objective/task against SMART criteria (Specific, Measurable, Actionable, Relatable, Timely) or its SMARTER/FAST extensions — grounded in joelparkerhenderson/smart-criteria, as a quality check that pairs with OKRs (see objectives-and-key-results-skill) and KPIs (see key-performance-indicators-skill).`
+			},
+			{
+				slug: 'maturity-models-skill',
+				description: `Use when asked to design, apply, or explain a maturity model — level naming conventions, top-down vs bottom-up construction, or well-known examples (CMMI, DevOps, Agile maturity models) — grounded in joelparkerhenderson/maturity-models, including documented rebuttals.`
+			},
+			{
+				slug: 'pitch-deck-skill',
+				description: `Use when asked to write, structure, or critique a startup pitch deck — fundraising slideshow content, common templates, or investor-advice frameworks (market-first, asymmetric bets, aggregation theory) — grounded in joelparkerhenderson/pitch-deck.`
+			},
+		]
+	},
+	{
+		title: `Communication & thinking`,
+		skills: [
+			{
+				slug: 'crucial-conversations-skill',
+				description: `Use when asked how to handle a high-stakes, emotionally charged conversation — the CPR/CRIB/AMPP/WWWF frameworks from the "Crucial Conversations" book — grounded in joelparkerhenderson/crucial-conversations, distinct from general team communication norms (see ways-of-working-skill).`
+			},
+			{
+				slug: 'oblique-strategies-skill',
+				description: `Use when asked for a creative-block-breaking prompt, or to explain Brian Eno and Peter Schmidt's "Oblique Strategies" card deck — lateral-thinking prompts for getting unstuck on a creative or technical problem — grounded in joelparkerhenderson/oblique-strategies.`
+			},
+			{
+				slug: 'inclusive-language-skill',
+				description: `Use when asked to write or review text for inclusive language — gender-neutral role names and pronouns, disability-respectful phrasing, or non-gendered technology/business terminology (master/slave, whitelist/blacklist alternatives) — grounded in joelparkerhenderson/inclusive-language. Adapt to the specific audience and context rather than applying mechanically.`
+			},
+			{
+				slug: 'always-improving-skill',
+				description: `Use when asked to summarize or apply ideas from popular self-improvement and business books (Grit, Start with Why, The Lean Startup, The Power of Habit, Zero to One, and others) — grounded in joelparkerhenderson/always-improving's curated summary list. Not a substitute for reading the actual books.`
 			},
 		]
 	},
@@ -387,6 +465,49 @@ export const skillCategories: SkillCategory[] = [
 			{
 				slug: 'locale-skill',
 				description: `Use when asked about internationalization (i18n), localization (l10n), locale codes (BCP 47), or how to handle locale-sensitive data (dates, numbers, currency, plurals, text direction) in code — independent of any specific i18n library or framework.`
+			},
+		]
+	},
+	{
+		title: `Software development practices`,
+		skills: [
+			{
+				slug: 'test-driven-development-skill',
+				description: `Use when asked to write code test-driven — red/green/refactor, writing the failing test first, or explaining TDD's benefits and limits — as distinct from behavior-driven development's given/when/then framing (see behavior-driven-development-skill) or writing tests after the fact.`
+			},
+			{
+				slug: 'behavior-driven-development-skill',
+				description: `Use when asked to write Given/When/Then scenarios, Gherkin feature files, or explain behavior-driven development (BDD) — as distinct from test-driven development's red/green/refactor cycle (see test-driven-development-skill), which BDD layers a shared-language discipline on top of.`
+			},
+			{
+				slug: 'specification-driven-development-skill',
+				description: `Use when asked to write a spec before implementation, structure a spec-first repository (spec/index.md, per-topic specs), or explain specification-driven development — as distinct from test-driven development (see test-driven-development-skill), which drives design from tests rather than a written specification document.`
+			},
+		]
+	},
+	{
+		title: `Diagramming`,
+		skills: [
+			{
+				slug: 'plantuml-skill',
+				description: `Use when asked to write PlantUML diagram source — sequence, class, ERD, activity, state, Gantt, C4, ArchiMate, mind map, WBS, or JSON/YAML visualization diagrams — grounded in joelparkerhenderson/plantuml-examples.`
+			},
+		]
+	},
+	{
+		title: `Systems & safety engineering`,
+		skills: [
+			{
+				slug: 'system-quality-attributes-skill',
+				description: `Use when asked to name, define, or choose system quality attributes (SQAs) — non-functional requirements like reliability, scalability, observability, maintainability — for a software system or organizational practice, distinct from functional requirements — grounded in joelparkerhenderson/system-quality-attributes.`
+			},
+			{
+				slug: 'queueing-theory-skill',
+				description: `Use when asked to apply queueing theory to software/business processes — arrival/service rate notation, utilization ratio, Little's Law, or DORA/MTTR metrics derived from queue behavior — grounded in joelparkerhenderson/queueing-theory.`
+			},
+			{
+				slug: 'causal-analysis-based-on-system-theory-skill',
+				description: `Use when asked to investigate an incident/accident using CAST (Causal Analysis based on System Theory) — a blame-free, systems-view accident analysis technique built on STAMP/STPA — grounded in joelparkerhenderson/causal-analysis-based-on-system-theory, as distinct from single-root-cause analysis.`
 			},
 		]
 	},
