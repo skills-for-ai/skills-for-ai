@@ -1,9 +1,6 @@
 // GENERATED FILE — do not edit by hand.
-// Regenerate with the skills-data generation script (see
-// skills-for-ai.github.io/README.md) whenever skills/*/SKILL.md
-// content changes.
-
-export const REPO_URL = "https://github.com/skills-for-ai/skills-for-ai";
+// Regenerate with bin/generate-skills-data (from the monorepo
+// root) whenever skills/*/SKILL.md content changes.
 
 export interface Skill {
 	slug: string;

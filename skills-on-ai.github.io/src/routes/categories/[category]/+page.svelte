@@ -7,8 +7,8 @@
 </script>
 
 <Seo
-	title="{data.category.title} — Skills for AI"
-	description="Skills in the {data.category.title} category of the Skills for AI catalog."
+	title="{data.category.title} — Skills on AI"
+	description="Skills in the {data.category.title} category of the Skills on AI catalog."
 	path="/categories/{data.category.slug}/"
 />
 

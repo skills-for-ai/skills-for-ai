@@ -6,7 +6,7 @@ const config = {
 	preprocess: vitePreprocess(),
 	kit: {
 		// Fully static output for GitHub Pages (org site, served from the domain root
-		// once this subdirectory is exported to the standalone skills-for-ai.github.io
+		// once this subdirectory is exported to the standalone skills-on-ai.github.io
 		// repo — see spec/monorepo-github-pages/index.md at the monorepo root).
 		adapter: adapter({
 			pages: 'build',

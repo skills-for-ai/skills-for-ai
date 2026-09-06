@@ -7,4 +7,4 @@ set -eu
 top="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$top"
 
-git subtree push --prefix=skills-for-ai.github.io github-pages main
+git subtree push --prefix=skills-on-ai.github.io github-pages main

@@ -11,12 +11,12 @@
 	// finding and reusing the one declared in app.html (which also carries
 	// id="lily-theme" for the pre-paint flash-avoidance script there)
 	// rather than creating a second one. Choice persists to localStorage
-	// under the same "skills-for-ai-theme" key app.html's inline script
+	// under the same "skills-on-ai-theme" key app.html's inline script
 	// already reads before first paint.
 	import ThemePicker from 'lily-design-system-svelte-theme-picker';
 	import { themes, DEFAULT_THEME_ID } from '$lib/data/themes';
 
-	const STORAGE_KEY = 'skills-for-ai-theme';
+	const STORAGE_KEY = 'skills-on-ai-theme';
 	const themeSlugs = themes.map((t) => t.id);
 	const themeLabels = Object.fromEntries(themes.map((t) => [t.id, t.label]));
 

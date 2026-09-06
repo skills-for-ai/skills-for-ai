@@ -21,7 +21,7 @@
 	<ContainerWithFixedWidth maxWidth="72rem">
 		<FooterNav />
 		<p class="footer-colophon">
-			© {year} Skills for AI ·
+			© {year} Skills on AI ·
 			<a href={REPO_URL}>Source on GitHub</a> ·
 			built with <a href="https://kit.svelte.dev">SvelteKit</a> and the
 			<a href="https://lilydesignsystem.github.io/">Lily Design System</a>

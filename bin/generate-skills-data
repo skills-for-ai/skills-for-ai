@@ -1,0 +1,276 @@
+#!/usr/bin/env python3
+"""Generate skills-on-ai.github.io/src/lib/data/{skills,categories}.ts
+from skills/*/SKILL.md (source of truth for content) and README.md
+(source of truth for category grouping).
+
+Run this from anywhere; it locates the monorepo root relative to this
+script (bin/../). Run it whenever a skill is added, renamed, removed, or
+edited, or whenever README.md's category structure changes — the two
+generated .ts files should never be hand-edited directly.
+
+    bin/generate-skills-data
+"""
+import re
+import json
+import html
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+SKILLS_DIR = ROOT / "skills"
+README = ROOT / "README.md"
+OUT_DIR = ROOT / "skills-on-ai.github.io/src/lib/data"
+
+
+ACRONYMS = {
+    "aws": "AWS", "ai": "AI", "css": "CSS", "html": "HTML", "json": "JSON",
+    "xml": "XML", "yaml": "YAML", "toml": "TOML", "sql": "SQL",
+    "mysql": "MySQL", "mssql": "MSSQL", "postgresql": "PostgreSQL",
+    "sqlite": "SQLite", "mariadb": "MariaDB", "dmaic": "DMAIC",
+    "adkar": "ADKAR", "swot": "SWOT", "pestle": "PESTLE", "ooda": "OODA",
+    "raci": "RACI", "plantuml": "PlantUML", "ux": "UX", "ui": "UI",
+    "gpt": "GPT", "gb1": "GB1", "prince2": "PRINCE2",
+    "javascript": "JavaScript", "typescript": "TypeScript",
+}
+
+
+def slug_to_title(slug: str) -> str:
+    words = slug.split("-")
+    small = {"a", "an", "of", "the", "and", "or", "to", "in", "on", "vs"}
+    out = []
+    for i, w in enumerate(words):
+        if w.lower() in ACRONYMS:
+            out.append(ACRONYMS[w.lower()])
+        elif w.lower() in small and i != 0:
+            out.append(w.lower())
+        else:
+            out.append(w[:1].upper() + w[1:])
+    return " ".join(out)
+
+
+# ---------- 1. Parse README.md category structure ----------
+
+category_of = {}  # slug -> category title (e.g. "Technology › Diagramming")
+order = []  # list of category titles in README order
+link_re = re.compile(r"\(skills/([a-z0-9-]+)/?\)")
+
+current_h2 = None
+current_h3 = None
+with README.open() as f:
+    for line in f:
+        line = line.rstrip("\n")
+        m2 = re.match(r"^## (.+)", line)
+        m3 = re.match(r"^### (.+)", line)
+        if m2:
+            current_h2 = m2.group(1).strip()
+            current_h3 = None
+            continue
+        if m3:
+            current_h3 = m3.group(1).strip()
+            continue
+        m = link_re.search(line)
+        if m and current_h2:
+            slug = m.group(1)
+            title = current_h2 if not current_h3 else f"{current_h2} › {current_h3}"
+            if title not in order:
+                order.append(title)
+            category_of[slug] = title
+
+# ---------- 2. Markdown body -> HTML ----------
+
+def render_inline(text: str, escape=True) -> str:
+    if escape:
+        text = html.escape(text, quote=False)
+    # inline code
+    text = re.sub(r"`([^`]+)`", r"<code>\1</code>", text)
+    # wikilinks [[name]]
+    def wikilink(m):
+        slug = m.group(1)
+        return f'<a href="/skills/{slug}/">{slug_to_title(slug)}</a>'
+    text = re.sub(r"\[\[([a-z0-9-]+)\]\]", wikilink, text)
+    # markdown links [text](url)
+    text = re.sub(r"\[([^\]]+)\]\(([^)]+)\)", r'<a href="\2">\1</a>', text)
+    # bold
+    text = re.sub(r"\*\*([^*]+)\*\*", r"<strong>\1</strong>", text)
+    # italic (single asterisk, not already consumed)
+    text = re.sub(r"(?<!\*)\*([^*]+)\*(?!\*)", r"<em>\1</em>", text)
+    return text
+
+
+def render_body(body: str) -> str:
+    lines = body.split("\n")
+    # Drop the leading H1 title line (the page already renders the title).
+    while lines and not lines[0].strip():
+        lines.pop(0)
+    if lines and lines[0].startswith("# "):
+        lines.pop(0)
+
+    html_parts = []
+    i = 0
+    n = len(lines)
+    para_buf = []
+
+    def flush_para():
+        if para_buf:
+            text = " ".join(l.strip() for l in para_buf if l.strip())
+            if text:
+                html_parts.append(f"<p>{render_inline(text)}</p>")
+            para_buf.clear()
+
+    while i < n:
+        line = lines[i]
+        stripped = line.strip()
+
+        if stripped.startswith("```"):
+            flush_para()
+            lang = stripped[3:].strip()
+            code_lines = []
+            i += 1
+            while i < n and not lines[i].strip().startswith("```"):
+                code_lines.append(lines[i])
+                i += 1
+            i += 1  # skip closing fence
+            code = html.escape("\n".join(code_lines))
+            cls = f' class="language-{lang}"' if lang else ""
+            html_parts.append(f"<pre><code{cls}>{code}</code></pre>")
+            continue
+
+        if stripped.startswith("## "):
+            flush_para()
+            html_parts.append(f"<h2>{render_inline(stripped[3:].strip())}</h2>")
+            i += 1
+            continue
+
+        if stripped.startswith("### "):
+            flush_para()
+            html_parts.append(f"<h3>{render_inline(stripped[4:].strip())}</h3>")
+            i += 1
+            continue
+
+        if re.match(r"^[-*] ", stripped):
+            flush_para()
+            items = []
+            while i < n:
+                s = lines[i].strip()
+                if re.match(r"^[-*] ", s):
+                    items.append(s[2:].strip())
+                    i += 1
+                    # gather indented continuation lines
+                    while i < n and lines[i].strip() and not re.match(r"^[-*] ", lines[i].strip()) and lines[i].startswith("  "):
+                        items[-1] += " " + lines[i].strip()
+                        i += 1
+                elif not s:
+                    break
+                else:
+                    break
+            html_parts.append("<ul>" + "".join(f"<li>{render_inline(it)}</li>" for it in items) + "</ul>")
+            continue
+
+        if re.match(r"^\d+\. ", stripped):
+            flush_para()
+            items = []
+            while i < n:
+                s = lines[i].strip()
+                if re.match(r"^\d+\. ", s):
+                    items.append(re.sub(r"^\d+\. ", "", s))
+                    i += 1
+                    while i < n and lines[i].strip() and not re.match(r"^\d+\. ", lines[i].strip()) and lines[i].startswith("  "):
+                        items[-1] += " " + lines[i].strip()
+                        i += 1
+                elif not s:
+                    break
+                else:
+                    break
+            html_parts.append("<ol>" + "".join(f"<li>{render_inline(it)}</li>" for it in items) + "</ol>")
+            continue
+
+        if not stripped:
+            flush_para()
+            i += 1
+            continue
+
+        para_buf.append(line)
+        i += 1
+
+    flush_para()
+    return "\n".join(html_parts)
+
+
+# ---------- 3. Walk skills/*/SKILL.md ----------
+
+skills = []
+fm_re = re.compile(r"^---\n(.*?)\n---\n(.*)$", re.S)
+
+for d in sorted(SKILLS_DIR.iterdir()):
+    if not d.is_dir():
+        continue
+    f = d / "SKILL.md"
+    if not f.exists():
+        continue
+    slug = d.name
+    text = f.read_text()
+    m = fm_re.match(text)
+    if not m:
+        print("WARN: no frontmatter", slug)
+        continue
+    frontmatter, body = m.group(1), m.group(2)
+    name_m = re.search(r"^name:\s*(.+)$", frontmatter, re.M)
+    desc_m = re.search(r"^description:\s*(.+)$", frontmatter, re.M)
+    name = name_m.group(1).strip() if name_m else slug
+    description = desc_m.group(1).strip() if desc_m else ""
+    category = category_of.get(slug, "Uncategorized")
+    body_html = render_body(body)
+    skills.append({
+        "slug": slug,
+        "title": slug_to_title(slug),
+        "description": description,
+        "category": category,
+        "bodyHtml": body_html,
+    })
+
+print(f"Parsed {len(skills)} skills, {len(order)} categories")
+uncategorized = [s["slug"] for s in skills if s["category"] == "Uncategorized"]
+if uncategorized:
+    print("UNCATEGORIZED:", uncategorized)
+
+# ---------- 4. Emit TypeScript ----------
+
+def ts_str(s: str) -> str:
+    return json.dumps(s, ensure_ascii=False)
+
+OUT_DIR.mkdir(parents=True, exist_ok=True)
+
+categories_ts = OUT_DIR / "categories.ts"
+with categories_ts.open("w") as f:
+    f.write("// GENERATED FILE — do not edit by hand.\n")
+    f.write("// Regenerate with bin/generate-skills-data (from the monorepo\n")
+    f.write("// root) whenever skills/ or the root README.md's category\n")
+    f.write("// structure changes.\n\n")
+    f.write("export interface Category {\n\tslug: string;\n\ttitle: string;\n}\n\n")
+    f.write("export const categories: Category[] = [\n")
+    for title in order:
+        cat_slug = re.sub(r"[^a-z0-9]+", "-", title.lower()).strip("-")
+        f.write(f"\t{{ slug: {ts_str(cat_slug)}, title: {ts_str(title)} }},\n")
+    f.write("];\n")
+
+skills_ts = OUT_DIR / "skills.ts"
+with skills_ts.open("w") as f:
+    f.write("// GENERATED FILE — do not edit by hand.\n")
+    f.write("// Regenerate with bin/generate-skills-data (from the monorepo\n")
+    f.write("// root) whenever skills/*/SKILL.md content changes.\n\n")
+    f.write("export interface Skill {\n")
+    f.write("\tslug: string;\n\ttitle: string;\n\tdescription: string;\n\tcategory: string;\n\tbodyHtml: string;\n")
+    f.write("}\n\n")
+    f.write("export const skills: Skill[] = [\n")
+    for s in skills:
+        f.write("\t{\n")
+        f.write(f"\t\tslug: {ts_str(s['slug'])},\n")
+        f.write(f"\t\ttitle: {ts_str(s['title'])},\n")
+        f.write(f"\t\tdescription: {ts_str(s['description'])},\n")
+        f.write(f"\t\tcategory: {ts_str(s['category'])},\n")
+        f.write(f"\t\tbodyHtml: {ts_str(s['bodyHtml'])}\n")
+        f.write("\t},\n")
+    f.write("];\n\n")
+    f.write("export const totalSkillCount = skills.length;\n")
+
+print("Wrote", categories_ts)
+print("Wrote", skills_ts)

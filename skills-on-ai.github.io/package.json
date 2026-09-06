@@ -1,5 +1,5 @@
 {
-	"name": "skills-for-ai.github.io",
+	"name": "skills-on-ai.github.io",
 	"version": "0.1.0",
 	"private": true,
 	"type": "module",
@@ -31,10 +31,10 @@
 	"author": "Joel Parker Henderson <joel@joelparkerhenderson.com>",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/skills-for-ai/skills-for-ai.github.io.git"
+		"url": "git+https://github.com/skills-on-ai/skills-on-ai.github.io.git"
 	},
-	"homepage": "https://skills-for-ai.github.io/",
+	"homepage": "https://skills-on-ai.github.io/",
 	"bugs": {
-		"url": "https://github.com/skills-for-ai/skills-for-ai/issues"
+		"url": "https://github.com/skills-on-ai/skills-on-ai/issues"
 	}
 }

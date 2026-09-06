@@ -93,6 +93,6 @@ Skills:
 
 Subprojects:
 
-- skills-for-ai.github.io — the public catalog site (SvelteKit +
+- skills-on-ai.github.io — the public catalog site (SvelteKit +
   adapter-static + Lily Design System), published via git subtree per
   [monorepo-github-pages](monorepo-github-pages/index.md).

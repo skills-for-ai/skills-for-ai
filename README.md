@@ -1,9 +1,9 @@
-# Skills for AI
+# Skills on AI
 
-Skills for AI.
+Skills on AI.
 
-Browse the catalog at <https://skills-for-ai.github.io/> (site source:
-[`skills-for-ai.github.io/`](skills-for-ai.github.io/)).
+Browse the catalog at <https://skills-on-ai.github.io/> (site source:
+[`skills-on-ai.github.io/`](skills-on-ai.github.io/)).
 
 ## Health economics
 

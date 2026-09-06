@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-	<title>{page.status} — Skills for AI</title>
+	<title>{page.status} — Skills on AI</title>
 </svelte:head>
 
 <main id="content" style="padding: 3rem 1.5rem; text-align: center;">

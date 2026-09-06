@@ -27,12 +27,12 @@
 	);
 </script>
 
-<Seo title="Skills for AI" description={SITE_DESCRIPTION} path="/" />
+<Seo title="Skills on AI" description={SITE_DESCRIPTION} path="/" />
 
 <main id="content">
 	<ContainerWithFixedWidth maxWidth="72rem">
 		<section class="hero">
-			<h1>Skills for AI</h1>
+			<h1>Skills on AI</h1>
 			<p class="lede">
 				A catalog of {totalSkillCount} Claude Code skills — reference material an AI coding
 				agent loads on demand for testing frameworks, cloud platforms, databases, design

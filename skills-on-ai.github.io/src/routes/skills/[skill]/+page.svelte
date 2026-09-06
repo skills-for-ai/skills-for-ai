@@ -16,7 +16,7 @@
 	);
 </script>
 
-<Seo title="{data.skill.title} — Skills for AI" description={data.skill.description} path="/skills/{data.skill.slug}/" />
+<Seo title="{data.skill.title} — Skills on AI" description={data.skill.description} path="/skills/{data.skill.slug}/" />
 
 <main id="content">
 	<ContainerWithFixedWidth maxWidth="60rem">

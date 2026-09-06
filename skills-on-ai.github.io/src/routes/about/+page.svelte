@@ -8,8 +8,8 @@
 </script>
 
 <Seo
-	title="About — Skills for AI"
-	description="What Skills for AI is, how a skill is structured, and how the catalog is organized and kept in sync."
+	title="About — Skills on AI"
+	description="What Skills on AI is, how a skill is structured, and how the catalog is organized and kept in sync."
 	path="/about/"
 />
 
@@ -20,7 +20,7 @@
 		<h1>About</h1>
 
 		<p>
-			Skills for AI is a catalog of {totalSkillCount} Claude Code skills, organized into {categories.length}
+			Skills on AI is a catalog of {totalSkillCount} Claude Code skills, organized into {categories.length}
 			categories. Each skill is a single <code>SKILL.md</code> file that an AI coding agent can load
 			on demand — reference material covering a specific topic (a testing technique, a cloud platform,
 			a database engine, a project-management framework, a diagram type, and more) with clear trigger

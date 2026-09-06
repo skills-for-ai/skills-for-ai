@@ -1,7 +1,7 @@
 // GENERATED FILE — do not edit by hand.
-// Regenerate with the skills-data generation script (see
-// skills-for-ai.github.io/README.md) whenever skills/ or the
-// root README.md's category structure changes.
+// Regenerate with bin/generate-skills-data (from the monorepo
+// root) whenever skills/ or the root README.md's category
+// structure changes.
 
 export interface Category {
 	slug: string;

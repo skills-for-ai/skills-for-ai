@@ -11,8 +11,8 @@
 </script>
 
 <Seo
-	title="Categories — Skills for AI"
-	description="All categories in the Skills for AI catalog."
+	title="Categories — Skills on AI"
+	description="All categories in the Skills on AI catalog."
 	path="/categories/"
 />
 
