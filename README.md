@@ -431,15 +431,6 @@ Browse the catalog at <https://skills-on-ai.org/> (site source:
 - [google-cloud](skills/google-cloud/)
 - [scaleway-cloud](skills/scaleway-cloud/)
 
-### Database
-
-- [mariadb-database](skills/mariadb-database/)
-- [mysql-database](skills/mysql-database/)
-- [mssql-database](skills/mssql-database/)
-- [oracle-database](skills/oracle-database/)
-- [postgresql-database](skills/postgresql-database/)
-- [sqlite-database](skills/sqlite-database/)
-
 ### Version control
 
 - [git](skills/git/)
@@ -508,6 +499,15 @@ Browse the catalog at <https://skills-on-ai.org/> (site source:
 - [lily-design-system-web-components](skills/lily-design-system-web-components/)
 
 ## Software Engineering
+
+### Databases
+
+- [mariadb-database](skills/mariadb-database/)
+- [mysql-database](skills/mysql-database/)
+- [mssql-database](skills/mssql-database/)
+- [oracle-database](skills/oracle-database/)
+- [postgresql-database](skills/postgresql-database/)
+- [sqlite-database](skills/sqlite-database/)
 
 ### Web formats
 
