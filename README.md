@@ -2,7 +2,7 @@
 
 Skills on AI.
 
-Browse the catalog at <https://skills-on-ai.github.io/> (site source:
+Browse the catalog at <https://skills-on-ai.org/> (site source:
 [`skills-on-ai.github.io/`](skills-on-ai.github.io/)).
 
 ## Health economics

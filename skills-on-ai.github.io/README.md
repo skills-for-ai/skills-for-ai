@@ -1,7 +1,7 @@
 # skills-on-ai.github.io
 
 The public catalog site for [Skills on AI](https://github.com/skills-on-ai/skills-on-ai),
-published at <https://skills-on-ai.github.io/>.
+published at <https://skills-on-ai.org/>.
 
 This is a nested subproject inside the `skills-on-ai` monorepo — **edit
 here**, not in the standalone `skills-on-ai.github.io` repository, which is

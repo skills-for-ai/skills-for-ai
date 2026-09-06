@@ -33,7 +33,7 @@
 		"type": "git",
 		"url": "git+https://github.com/skills-on-ai/skills-on-ai.github.io.git"
 	},
-	"homepage": "https://skills-on-ai.github.io/",
+	"homepage": "https://skills-on-ai.org/",
 	"bugs": {
 		"url": "https://github.com/skills-on-ai/skills-on-ai/issues"
 	}

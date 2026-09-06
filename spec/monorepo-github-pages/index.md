@@ -1,6 +1,6 @@
 # Monorepo GitHub Pages
 
-**Summary.** The public catalog site ([skills-on-ai.github.io](https://skills-on-ai.github.io/))
+**Summary.** The public catalog site ([skills-on-ai.org](https://skills-on-ai.org/))
 is maintained as a normal nested subproject inside this monorepo
 (`skills-on-ai.github.io/`) and published by exporting that
 subdirectory's history — via `git subtree` — into a standalone sibling
@@ -53,7 +53,7 @@ site's own `README.md` at [`skills-on-ai.github.io/`](../../skills-on-ai.github.
 | Monorepo (source of truth) | `~/git/skills-for-ai/skills-for-ai/` (local clone path; the GitHub/GitLab remotes are `skills-on-ai/skills-on-ai`) |
 | Docs site subproject (edit here) | `~/git/skills-for-ai/skills-for-ai/skills-on-ai.github.io/` |
 | Standalone export (read-only, derived) | `skills-on-ai/skills-on-ai.github.io` on GitHub |
-| Live site | <https://skills-on-ai.github.io/> |
+| Live site | <https://skills-on-ai.org/> (custom domain; GitHub Pages repo is still named `skills-on-ai.github.io` per the platform naming requirement) |
 | Publish shortcut | `make github-pages` (root `Makefile`) → `bin/make-github-pages` |
 
 ### Publish flow

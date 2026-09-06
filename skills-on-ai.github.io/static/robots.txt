@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://skills-on-ai.github.io/sitemap.xml
+Sitemap: https://skills-on-ai.org/sitemap.xml
