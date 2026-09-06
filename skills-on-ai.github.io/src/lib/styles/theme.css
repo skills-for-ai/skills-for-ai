@@ -10,6 +10,26 @@
 	box-sizing: border-box;
 }
 
+html {
+	/* TextSizePicker.svelte only ever sets data-text-size on <html>; the
+	   scale factor for each slug lives here. "default" is deliberately
+	   absent — the fallback below already resolves to 1. */
+	font-size: calc(100% * var(--user-font-scale, 1));
+}
+
+html[data-text-size='small'] {
+	--user-font-scale: 0.875;
+}
+html[data-text-size='large'] {
+	--user-font-scale: 1.125;
+}
+html[data-text-size='larger'] {
+	--user-font-scale: 1.25;
+}
+html[data-text-size='largest'] {
+	--user-font-scale: 1.375;
+}
+
 body {
 	margin: 0;
 	font-family:
@@ -25,7 +45,12 @@ a {
 	color: var(--color-link, #0b5fff);
 }
 
-.visually-hidden {
+/* .share-picker-status is included here, not just .visually-hidden: the
+   share-picker package always renders that status paragraph (never
+   [hidden] — a live region needs to stay in the a11y tree), and we
+   don't own that markup to add a class to it directly. */
+.visually-hidden,
+.share-picker-status {
 	position: absolute;
 	width: 1px;
 	height: 1px;

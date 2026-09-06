@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ContainerWithFixedWidth, Card, Grid, Badge } from 'lily-design-system-svelte-headless';
+	import { ContainerWithFixedWidth, Badge } from 'lily-design-system-svelte-headless';
 	import Seo from '$lib/components/site/Seo.svelte';
 	import { skills, totalSkillCount } from '$lib/data/skills';
 	import { categories } from '$lib/data/categories';
@@ -11,10 +11,11 @@
 		categories.map((cat) => [cat.slug, skills.filter((s) => s.category === cat.title)])
 	);
 
+	const searching = $derived(query.trim() !== '');
+
 	const filtered = $derived(
-		query.trim() === ''
-			? categories.map((cat) => ({ ...cat, skills: skillsByCategory.get(cat.slug) ?? [] }))
-			: categories
+		searching
+			? categories
 					.map((cat) => ({
 						...cat,
 						skills: (skillsByCategory.get(cat.slug) ?? []).filter(
@@ -24,6 +25,7 @@
 						)
 					}))
 					.filter((cat) => cat.skills.length > 0)
+			: categories.map((cat) => ({ ...cat, skills: skillsByCategory.get(cat.slug) ?? [] }))
 	);
 </script>
 
@@ -55,19 +57,20 @@
 		/>
 
 		{#each filtered as category (category.slug)}
-			<section class="category">
-				<h2>
-					<a href="/categories/{category.slug}/">{category.title}</a>
+			<details class="category" open={searching}>
+				<summary>
+					<span class="category-title">{category.title}</span>
 					<Badge label="{category.skills.length} skills">{category.skills.length}</Badge>
-				</h2>
-				<Grid columns="repeat(auto-fill, minmax(260px, 1fr))" gap="1rem">
+				</summary>
+				<ul class="skill-list">
 					{#each category.skills as skill (skill.slug)}
-						<Card heading={skill.title} href="/skills/{skill.slug}/" label={skill.title}>
-							<p class="skill-description">{skill.description}</p>
-						</Card>
+						<li>
+							<a href="/skills/{skill.slug}/">{skill.title}</a>
+							<span class="skill-description">— {skill.description}</span>
+						</li>
 					{/each}
-				</Grid>
-			</section>
+				</ul>
+			</details>
 		{/each}
 
 		{#if filtered.length === 0}
@@ -102,18 +105,50 @@
 		margin-bottom: 2rem;
 	}
 	.category {
-		margin-bottom: 2.5rem;
+		margin-bottom: 0.75rem;
+		border: 1px solid var(--color-border, #d0d5dd);
+		border-radius: 0.5rem;
+		padding: 0 1rem;
 	}
-	.category h2 {
+	.category summary {
+		cursor: pointer;
+		list-style: none;
 		display: flex;
 		align-items: center;
 		gap: 0.6rem;
+		padding-block: 0.9rem;
+		font-size: 1.15rem;
+		font-weight: 600;
 	}
-	.category h2 a {
-		color: inherit;
+	.category summary::-webkit-details-marker {
+		display: none;
+	}
+	.category summary::before {
+		content: '▶';
+		display: inline-block;
+		font-size: 0.7em;
+		transition: transform 0.15s ease;
+	}
+	.category[open] summary::before {
+		transform: rotate(90deg);
+	}
+	.category-title {
+		flex: 1;
+	}
+	.skill-list {
+		list-style: none;
+		margin: 0;
+		padding: 0 0 1rem;
+	}
+	.skill-list li {
+		padding-block: 0.4rem;
+		border-top: 1px solid var(--color-border, #eef1f5);
+	}
+	.skill-list li:first-child {
+		border-top: none;
 	}
 	.skill-description {
 		font-size: 0.9rem;
-		line-height: 1.45;
+		opacity: 0.8;
 	}
 </style>

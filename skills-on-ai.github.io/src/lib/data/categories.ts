@@ -12,6 +12,7 @@ export const categories: Category[] = [
 	{ slug: "health-economics", title: "Health economics" },
 	{ slug: "health-safety", title: "Health & safety" },
 	{ slug: "health-care-assessments", title: "Health care assessments" },
+	{ slug: "health-care", title: "Health care" },
 	{ slug: "organizations", title: "Organizations" },
 	{ slug: "management-disciplines", title: "Management disciplines" },
 	{ slug: "enterprise", title: "Enterprise" },

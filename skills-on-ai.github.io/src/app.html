@@ -8,12 +8,13 @@
 		<link rel="stylesheet" id="lily-theme" data-lily-theme-picker="theme" href="/themes/light.css" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<script>
-			// Apply the stored theme choice before first paint, so returning
-			// visitors never see a flash of the wrong theme. Mirrors
-			// ThemePicker.svelte, a thin wrapper around Lily's theme-picker
-			// helper — it persists a slug, not a computed value, so this
-			// script only ever sets a data-* attribute and swaps the
-			// stylesheet href, never CSS values directly.
+			// Apply the stored theme and text-size choices before first
+			// paint, so returning visitors never see a flash of the wrong
+			// theme or scale. Mirrors ThemePicker.svelte / TextSizePicker.svelte,
+			// thin wrappers around Lily's theme-picker / text-size-picker
+			// helpers — both persist a slug, not a computed value, so this
+			// script only ever sets data-* attributes, never CSS values
+			// directly (theme.css maps data-text-size to --user-font-scale).
 			(function () {
 				try {
 					var theme = localStorage.getItem('skills-on-ai-theme');
@@ -21,6 +22,10 @@
 						document.documentElement.dataset.theme = theme;
 						var link = document.getElementById('lily-theme');
 						if (link) link.href = '/themes/' + theme + '.css';
+					}
+					var textSize = localStorage.getItem('skills-on-ai-text-size');
+					if (textSize) {
+						document.documentElement.dataset.textSize = textSize;
 					}
 				} catch (e) {
 					// localStorage unavailable (private browsing, disabled storage) — ignore.
