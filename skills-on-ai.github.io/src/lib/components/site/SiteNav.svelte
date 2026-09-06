@@ -26,6 +26,7 @@
 	.site-nav ul {
 		display: flex;
 		flex-wrap: wrap;
+		justify-content: center;
 		gap: 1.25rem;
 		list-style: none;
 		margin: 0;

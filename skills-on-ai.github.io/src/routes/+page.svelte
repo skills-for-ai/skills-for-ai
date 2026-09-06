@@ -3,7 +3,7 @@
 	import Seo from '$lib/components/site/Seo.svelte';
 	import { skills } from '$lib/data/skills';
 	import { categories } from '$lib/data/categories';
-	import { REPO_URL, SITE_DESCRIPTION } from '$lib/site';
+	import { SITE_DESCRIPTION } from '$lib/site';
 
 	let query = $state('');
 
@@ -40,11 +40,6 @@
 				testing frameworks, cloud platforms, databases, design systems, programming languages,
 				and more. Each skill is a single <code>SKILL.md</code> file with trigger conditions and
 				grounded content.
-			</p>
-			<p class="hero-links">
-				<a href={REPO_URL}>Source on GitHub</a> ·
-				<a href="{REPO_URL}#readme">README</a> ·
-				<a href="/categories/">Browse by category</a>
 			</p>
 		</section>
 
@@ -84,19 +79,19 @@
 		padding-block: 3.5rem 2rem;
 		background: none;
 		text-align: center;
+		color: #111827;
 	}
 	.hero h1 {
 		font-size: 3.25rem;
 		line-height: 1.1;
 		margin-block: 0 1rem;
+		color: inherit;
 	}
 	.lede {
 		max-width: 60ch;
 		font-size: 1.15rem;
 		margin-inline: auto;
-	}
-	.hero-links {
-		font-size: 0.95rem;
+		color: inherit;
 	}
 	.search-label {
 		display: block;
